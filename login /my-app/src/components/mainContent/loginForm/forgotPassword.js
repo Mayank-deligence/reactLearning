@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState , useContext} from "react";
 import "./forgotPassword.css";
+import AuthContext from "../../../authContext/authContext";
+import { Link } from "react-router-dom";
 function ForgotPasswordForm({ onSubmit, onCancel }) {
     const [email, setEmail] = useState("");
     const [emailError, setEmailError] = useState("");
-  
+    const myContext = useContext(AuthContext);
     const handleEmailChange = (e) => {
       setEmail(e.target.value);
       setEmailError("");
@@ -56,9 +58,9 @@ function ForgotPasswordForm({ onSubmit, onCancel }) {
             Recover Password
           </button>
           <div className="cancel">
-            <a href="" onClick={handleCancel}>
+            <Link to="/">
               Back to Login
-            </a>
+            </Link>
           </div>
         </form>
       </div>

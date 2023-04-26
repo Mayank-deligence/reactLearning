@@ -1,16 +1,22 @@
 import "./App.css";
-import 'bootstrap/dist/css/bootstrap.css';
-import FooterContent from "./components/footer/footerContent";
-import Header from "./components/header/header";
-import ContentImage from "./components/mainContent/contentImage/contentImage";
+import "bootstrap/dist/css/bootstrap.css";
+import LoginPage from "./page/loginPage";
+// import ForgotPasswordForm from  "./components/mainContent/loginForm/forgotPassword"
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+// import ContentImage from "./components/mainContent/contentImage/contentImage";
+import ForgotPasswordPage from "./page/forgotPasswordPage";
 // import LoginForm from "./components/mainContent/loginForm/loginForm";
 function App() {
   return (
-    <div className="App">
-        <Header />
-       <ContentImage />
-      <FooterContent />
-    </div>
+    <BrowserRouter>
+
+
+      <Routes>
+        <Route path="/" index element={<LoginPage />} />
+        <Route path="/forgotPassword" element={<ForgotPasswordPage />} />
+      </Routes>
+
+    </BrowserRouter>
   );
 }
 
