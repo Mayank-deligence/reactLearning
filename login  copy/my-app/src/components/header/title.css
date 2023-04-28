@@ -1,0 +1,6 @@
+.headTitle h3 {
+    color: maroon;
+}
+.h3, h3 {
+    font-size: 1.75rem !important;
+}

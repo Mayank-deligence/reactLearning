@@ -1,117 +1,26 @@
-/* .App {
-  width: 100%;
+.main-content {
+  border-bottom: 10px solid maroon;
+  padding: 10px 0 50px;
+  min-height: 65vh;
+}
+.container {
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.content-container {
-  border-bottom: 10px solid maroon;
-  width: 80vw;
-  min-height: calc(65vh - 10px);
-  display: flex;
-  flex-direction: row;
-  align-items: center ;
-  justify-content: center;
-  min-height: 65vh;
-  padding: 10px 0 50px;
-  box-sizing: border-box; 
 }
 
-.image-container {
-  padding-right: 6rem;
-  
+.row {
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0px;
+  margin-top: 0;
 }
-
-.login-form-container {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0rem;
-  box-sizing: border-box;
-  background: #820000 none repeat scroll 0 0;
-  border-radius: 2px;
-  color: white;
-  height: 100%;
-  padding: 20px;
-}
-
-.page-footer {
-  text-align: center;
-  padding-top: 1.5rem;
-} */
-
-.App {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.content-container {
-  border-bottom: 10px solid maroon;
-  width: 87vw;
-  min-height: calc(65vh - 10px);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  min-height: 65vh;
-  padding: 10px 0 50px;
-  box-sizing: border-box;
-}
-
-.image-container {
-  padding-right: 6rem;
-}
-
-.login-form-container {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  justify-content: center;
-  margin-top: 0em;
-  box-sizing: border-box;
-  background: #820000 none repeat scroll 0 0;
-  border-radius: 2px;
-  color: white;
-  height: 100%;
-  padding: 20px;
-}
-
-.page-footer {
-  text-align: center;
-  padding-top: 1.5rem !important;
-}
-.footer{
-  padding: 20px 0;
-}
-/* Media Queries */
-@media screen and (max-width: 768px) {
-  .content-container {
-    flex-direction: column;
-    /* padding: 10px; */
-  }
-
-  .image-container {
-    padding-right: 0;
-    margin-bottom: 1.5rem;
-  }
-  
-  .login-form-container {
-    width: 100%;
-  }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    text-align: left;
 }
 

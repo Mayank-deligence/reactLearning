@@ -1,68 +1,58 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./forgotPassword.css";
-function ForgotPasswordForm({ onSubmit, onCancel }) {
-    const [email, setEmail] = useState("");
-    const [emailError, setEmailError] = useState("");
-  
-    const handleEmailChange = (e) => {
-      setEmail(e.target.value);
-      setEmailError("");
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      if (!email) {
-        setEmailError("Need an email address here.");
-        return;
-      }
-      if ( !email.includes("@")) {
-        setEmailError("is this email address correct ?");
-        return;
-      }
-      onSubmit(email);
-    };
-  
-    const handleCancel = (e) => {
-      e.preventDefault();
-      onCancel();
-    };
-  
-    return (
-      <div className="forgot-password-form-container">
-        <div className="page-header">
-          <h4>Recover Password</h4>
-        </div>
-        <div className="panel">
-          <p>
-            Enter your email address below to receive a link to reset your
-            password.
-          </p>
+
+function ForgotPasswordForm() {
+  const [email, setEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!email) {
+      setErrorMessage("Need an email address here.");
+    } if (email && !email.includes("@")) {
+      setErrorMessage("Is this email address correct.");
+    }else {
+      // send password reset link
+    }
+  };
+  const handleChange = (event) => {
+    setEmail(event.target.value);
+    setErrorMessage("");
+  };
+
+  return (
+    <div className="row">
+      <div className="col-md-6 offset-md-3">
+        <h4 className="page-header">Recover Password</h4>
+        <div role="alert" className="alert alert-info">
+          Enter your email address below to receive a link to reset your password.
         </div>
         <form onSubmit={handleSubmit} noValidate>
           <div className="form-group">
             <label className="control-label">Email Address</label>
             <input
-              name="emailAddress"
-              placeholder="Email Address"
               type="email"
-              id="emailAddress"
+              name="emailAddress"
               className="form-control"
+              placeholder="Email Address"
               value={email}
-              onChange={handleEmailChange}
+              onChange={handleChange}
             />
-            {emailError && <div className="error">{emailError}</div>}
+            {errorMessage && <p style={{color:'red'}} className="error">{errorMessage}</p>}
           </div>
-          <button type="submit" className="recover-password">
+          <button type="submit" className="btn btn-success btn-block">
             Recover Password
           </button>
-          <div className="cancel">
-            <a href="#" onClick={handleCancel}>
-              Back to Login
-            </a>
+          <div>
+            <Link to="/">
+              <p>Back to Login.</p>
+            </Link>
           </div>
         </form>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
-  export default ForgotPasswordForm;
+export default ForgotPasswordForm;
