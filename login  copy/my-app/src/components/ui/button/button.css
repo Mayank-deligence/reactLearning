@@ -1,0 +1,10 @@
+.btn-default {
+    color: #fff;
+    background-color: maroon;
+    border-color: maroon;
+}
+.btn-default:hover {
+    color: #ffc107;
+    background-color: #810202;
+    border-color: #810202;
+}

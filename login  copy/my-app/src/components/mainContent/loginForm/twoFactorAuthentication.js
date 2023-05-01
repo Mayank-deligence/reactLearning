@@ -1,13 +1,16 @@
 import React ,{useState}from "react";
-import { Link  } from "react-router-dom";
+import { Link ,useNavigate } from "react-router-dom";
 import Login from "./loginForm";
 function TwoFactorAuthentication() {
+  const navigation = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [code, setCode] = useState("");
   const [codeError, setCodeError] = useState("");
 
 
-
+ const handleMainPage =()=>{
+ navigation("/mainPage")
+ }
   const handleCodeChange = (e) => {
     setCode(e.target.value);
     setCodeError("");
@@ -53,8 +56,9 @@ function TwoFactorAuthentication() {
             <Link onClick={() => setIsLoggedIn(false)}>Sign in again?</Link>
           </div>
           <button
-            type="submit"
+          type="button"
             className="btn btn-primary btn btn-primary-default"
+            onClick={handleMainPage}
           >
             Submit
           </button>
